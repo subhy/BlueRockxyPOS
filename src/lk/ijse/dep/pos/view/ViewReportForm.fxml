@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="569.0" prefWidth="751.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep.pos.controller.SearchOrdersFormController">
+   <children>
+      <TableView fx:id="tblReports" layoutX="14.0" layoutY="155.0" prefHeight="308.0" prefWidth="727.0">
+        <columns>
+          <TableColumn prefWidth="111.0" text="Code" />
+            <TableColumn prefWidth="121.0" text="Name" />
+            <TableColumn prefWidth="178.0" text="Qty" />
+            <TableColumn prefWidth="135.0" text="Unit Price" />
+            <TableColumn prefWidth="166.0" text="Total" />
+        </columns>
+      </TableView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="80.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="751.0">
+         <fill>
+            <LinearGradient endX="0.04807692307692308" endY="0.7115384615384616">
+               <stops>
+                  <Stop color="#1598d6" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <ImageView id="imgHome" fitHeight="53.0" fitWidth="55.0" layoutX="22.0" layoutY="15.0" onMouseClicked="#navigateToHome" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/home-icon.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="95.0" layoutY="23.0" text="Reports">
+         <font>
+            <Font name="Lucida Sans Demibold" size="27.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtItemCode" labelFloat="true" layoutX="17.0" layoutY="76.0" onAction="#txtItemCode_onAction" prefHeight="28.0" prefWidth="157.0" promptText="Item Code :" />
+      <JFXDatePicker fx:id="jdcFrom" layoutX="287.0" layoutY="76.0" />
+      <JFXDatePicker fx:id="jdcTo" layoutX="515.0" layoutY="76.0" />
+      <JFXTextField fx:id="txtDescription" labelFloat="true" layoutX="15.0" layoutY="121.0" prefHeight="28.0" prefWidth="216.0" promptText="Description :" />
+      <Label layoutX="488.0" layoutY="79.0" prefHeight="18.0" prefWidth="43.0" text="To :" />
+      <Label layoutX="236.0" layoutY="81.0" prefHeight="18.0" prefWidth="43.0" text="From:" />
+      <Button fx:id="btnSearch" layoutX="626.0" layoutY="120.0" mnemonicParsing="false" onAction="#btnSearch_OnAction" prefHeight="28.0" prefWidth="109.0" text="Search" />
+      <RadioButton fx:id="rbtItem" layoutX="186.0" layoutY="82.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="19.0" />
+      <RadioButton fx:id="rbtDate" layoutX="712.0" layoutY="81.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="19.0" />
+      <Label fx:id="lblTotal" layoutX="14.0" layoutY="517.0" prefHeight="42.0" prefWidth="290.0" text="Total :">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnPrint" layoutX="630.0" layoutY="519.0" mnemonicParsing="false" onAction="#btnPrint_OnAction" prefHeight="38.0" prefWidth="109.0" text="Print " />
+      <Label fx:id="lblDis" layoutX="395.0" layoutY="475.0" prefHeight="42.0" prefWidth="139.0" text="Dis :">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblCardSale" layoutX="215.0" layoutY="475.0" prefHeight="42.0" prefWidth="163.0" text="Card:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblCreditSale" layoutX="17.0" layoutY="475.0" prefHeight="42.0" prefWidth="163.0" text="Credit :">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblCashSale" layoutX="537.0" layoutY="475.0" prefHeight="42.0" prefWidth="204.0" text="Cash :">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

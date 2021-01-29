@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="664.0" prefWidth="654.0" style="-fx-background-color: white;" stylesheets="@style/manageitemform.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep.pos.controller.ManageItemFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="80.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="654.0">
+         <fill>
+            <LinearGradient endX="0.04807692307692308" endY="0.7115384615384616">
+               <stops>
+                  <Stop color="#1598d6" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill></Rectangle>
+      <ImageView id="imgHome" fitHeight="53.0" fitWidth="55.0" layoutX="22.0" layoutY="16.0" onMouseClicked="#navigateToHome" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/home-icon.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="95.0" layoutY="24.0" text="Manage Items">
+         <font>
+            <Font name="Lucida Sans Demibold" size="27.0" />
+         </font>
+      </Label>
+      <JFXButton id="btnAddNewCustomer" layoutX="518.0" layoutY="25.0" onAction="#btnAddNew_OnAction" prefHeight="35.0" prefWidth="122.0" style="-fx-cursor: hand;" text="+ New Item" />
+      <JFXTextField fx:id="txtCode" labelFloat="true" layoutX="17.0" layoutY="118.0" onAction="#txtCode_onAction" prefHeight="28.0" prefWidth="615.0" promptText="Item Code :" />
+      <JFXTextField fx:id="txtDescription" labelFloat="true" layoutX="17.0" layoutY="164.0" onAction="#txtDesc_onAction" prefHeight="28.0" prefWidth="615.0" promptText="Item Description :" />
+      <JFXTextField fx:id="txtQtyOnHand" labelFloat="true" layoutX="17.0" layoutY="212.0" onAction="#txtQOH_onAction" prefHeight="28.0" prefWidth="615.0" promptText="Qty. on Hand" />
+      <JFXButton id="btnSave" fx:id="btnSave" layoutX="333.0" layoutY="318.0" onAction="#btnSave_OnAction" prefHeight="28.0" prefWidth="92.0" style="-fx-cursor: hand;" text="Save" />
+      <JFXButton id="btnDelete" fx:id="btnDelete" layoutX="437.0" layoutY="318.0" onAction="#btnDelete_OnAction" prefHeight="28.0" prefWidth="92.0" style="-fx-cursor: hand;" text="Delete" />
+      <TableView fx:id="tblItems" layoutX="22.0" layoutY="363.0" prefHeight="254.0" prefWidth="615.0">
+        <columns>
+          <TableColumn prefWidth="97.0" text="Code" />
+          <TableColumn prefWidth="204.0" text="Description" />
+            <TableColumn prefWidth="89.0" text="Qty. on Hand" />
+            <TableColumn prefWidth="116.0" text="Unit Price" />
+            <TableColumn prefWidth="95.0" text="Value" />
+        </columns>
+      </TableView>
+      <JFXTextField fx:id="txtUnitPrice" labelFloat="true" layoutX="17.0" layoutY="258.0" prefHeight="28.0" prefWidth="615.0" promptText="Unit Price" />
+      <TextField fx:id="txtItemSearch" layoutX="22.0" layoutY="319.0" prefHeight="26.0" prefWidth="281.0" promptText="Enter Code Or Name" />
+      <Button fx:id="btnReport" layoutX="543.0" layoutY="318.0" mnemonicParsing="false" onAction="#btnReport_onAction" prefHeight="28.0" prefWidth="92.0" style="-fx-background-color: #00bfff;" text="Report" />
+      <JFXTextField fx:id="txtnewQty" labelFloat="true" layoutX="376.0" layoutY="212.0" onAction="#txtnewQty_onAction" prefHeight="28.0" prefWidth="258.0" promptText="New Qty :" />
+      <Label fx:id="lblTotSValue" alignment="CENTER_RIGHT" layoutX="112.0" layoutY="622.0" prefHeight="28.0" prefWidth="526.0" text="Total Stock Value :" textAlignment="RIGHT">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
